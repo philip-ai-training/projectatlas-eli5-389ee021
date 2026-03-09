@@ -13,12 +13,17 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ['DM Sans', 'sans-serif'],
+        display: ['Space Grotesk', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        canvas: "hsl(var(--canvas))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -46,6 +51,18 @@ export default {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+        },
+        node: {
+          blue: "hsl(var(--node-blue))",
+          "blue-border": "hsl(var(--node-blue-border))",
+          pink: "hsl(var(--node-pink))",
+          "pink-border": "hsl(var(--node-pink-border))",
+          green: "hsl(var(--node-green))",
+          "green-border": "hsl(var(--node-green-border))",
+          yellow: "hsl(var(--node-yellow))",
+          "yellow-border": "hsl(var(--node-yellow-border))",
+          purple: "hsl(var(--node-purple))",
+          "purple-border": "hsl(var(--node-purple-border))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
