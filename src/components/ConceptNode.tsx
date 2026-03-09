@@ -12,8 +12,17 @@ export interface ConceptNodeData {
   [key: string]: unknown;
 }
 
-function ConceptNode({ data, id }: NodeProps) {
+const COLOR_MAP: Record<string, { bg: string; border: string }> = {
+  "node-blue": { bg: "bg-node-blue", border: "border-node-blue-border" },
+  "node-pink": { bg: "bg-node-pink", border: "border-node-pink-border" },
+  "node-green": { bg: "bg-node-green", border: "border-node-green-border" },
+  "node-yellow": { bg: "bg-node-yellow", border: "border-node-yellow-border" },
+  "node-purple": { bg: "bg-node-purple", border: "border-node-purple-border" },
+};
+
+function ConceptNode({ data }: NodeProps) {
   const nodeData = data as unknown as ConceptNodeData;
+  const colors = COLOR_MAP[nodeData.colorClass] ?? COLOR_MAP["node-blue"];
 
   return (
     <motion.div
@@ -26,13 +35,8 @@ function ConceptNode({ data, id }: NodeProps) {
         delay: nodeData.delay,
       }}
       className={`px-5 py-3.5 rounded-2xl border-2 shadow-sm cursor-pointer select-none
-        hover:shadow-md transition-shadow min-w-[140px] max-w-[200px] text-center`}
-      style={{
-        backgroundColor: `var(--tw-node-bg)`,
-        borderColor: `var(--tw-node-border)`,
-      }}
-      data-node-bg={nodeData.colorClass}
-      data-node-border={nodeData.borderClass}
+        hover:shadow-md transition-shadow min-w-[140px] max-w-[200px] text-center
+        ${colors.bg} ${colors.border}`}
     >
       <Handle type="target" position={Position.Top} className="!bg-muted-foreground/30 !w-2 !h-2 !border-0" />
       <span className="text-sm font-display font-semibold text-foreground leading-tight">
