@@ -6,33 +6,33 @@
 
 @layer base {
   :root {
-    --background: 40 33% 98%;
-    --foreground: 230 25% 18%;
+    --background: 220 60% 15%;
+    --foreground: 210 40% 92%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 230 25% 18%;
+    --card: 220 50% 20%;
+    --card-foreground: 210 40% 92%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 230 25% 18%;
+    --popover: 220 50% 20%;
+    --popover-foreground: 210 40% 92%;
 
-    --primary: 250 60% 65%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 210 80% 60%;
+    --primary-foreground: 220 60% 10%;
 
     --secondary: 340 50% 88%;
     --secondary-foreground: 340 40% 35%;
 
-    --muted: 220 20% 95%;
-    --muted-foreground: 220 10% 50%;
+    --muted: 220 40% 22%;
+    --muted-foreground: 210 20% 60%;
 
-    --accent: 170 45% 85%;
-    --accent-foreground: 170 40% 25%;
+    --accent: 200 50% 25%;
+    --accent-foreground: 200 40% 85%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 220 15% 90%;
-    --input: 220 15% 90%;
-    --ring: 250 60% 65%;
+    --border: 220 30% 28%;
+    --input: 220 30% 28%;
+    --ring: 210 80% 60%;
 
     --radius: 0.75rem;
 
@@ -48,16 +48,16 @@
     --node-purple: 270 55% 92%;
     --node-purple-border: 270 45% 78%;
 
-    --canvas: 40 25% 96%;
+    --canvas: 220 55% 12%;
 
-    --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 230 25% 18%;
-    --sidebar-primary: 250 60% 65%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 220 20% 95%;
-    --sidebar-accent-foreground: 230 25% 18%;
-    --sidebar-border: 220 15% 90%;
-    --sidebar-ring: 250 60% 65%;
+    --sidebar-background: 220 50% 18%;
+    --sidebar-foreground: 210 40% 92%;
+    --sidebar-primary: 210 80% 60%;
+    --sidebar-primary-foreground: 220 60% 10%;
+    --sidebar-accent: 220 40% 22%;
+    --sidebar-accent-foreground: 210 40% 92%;
+    --sidebar-border: 220 30% 28%;
+    --sidebar-ring: 210 80% 60%;
   }
 }
 
@@ -69,11 +69,36 @@
   body {
     @apply bg-background text-foreground font-sans antialiased;
     font-family: 'DM Sans', sans-serif;
+    position: relative;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Space Grotesk', sans-serif;
   }
+}
+
+/* Sparkles */
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(0); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+.sparkle-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.sparkle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: hsl(210 80% 70%);
+  animation: sparkle 3s ease-in-out infinite;
+  box-shadow: 0 0 6px 2px hsl(210 80% 60% / 0.4);
 }
 
 /* React Flow overrides */
