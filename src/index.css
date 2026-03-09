@@ -69,11 +69,36 @@
   body {
     @apply bg-background text-foreground font-sans antialiased;
     font-family: 'DM Sans', sans-serif;
+    position: relative;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Space Grotesk', sans-serif;
   }
+}
+
+/* Sparkles */
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(0); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+.sparkle-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.sparkle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: hsl(210 80% 70%);
+  animation: sparkle 3s ease-in-out infinite;
+  box-shadow: 0 0 6px 2px hsl(210 80% 60% / 0.4);
 }
 
 /* React Flow overrides */
