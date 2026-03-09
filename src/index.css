@@ -48,16 +48,16 @@
     --node-purple: 270 55% 92%;
     --node-purple-border: 270 45% 78%;
 
-    --canvas: 40 25% 96%;
+    --canvas: 220 55% 12%;
 
-    --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 230 25% 18%;
-    --sidebar-primary: 250 60% 65%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 220 20% 95%;
-    --sidebar-accent-foreground: 230 25% 18%;
-    --sidebar-border: 220 15% 90%;
-    --sidebar-ring: 250 60% 65%;
+    --sidebar-background: 220 50% 18%;
+    --sidebar-foreground: 210 40% 92%;
+    --sidebar-primary: 210 80% 60%;
+    --sidebar-primary-foreground: 220 60% 10%;
+    --sidebar-accent: 220 40% 22%;
+    --sidebar-accent-foreground: 210 40% 92%;
+    --sidebar-border: 220 30% 28%;
+    --sidebar-ring: 210 80% 60%;
   }
 }
 
