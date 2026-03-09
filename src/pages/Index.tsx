@@ -4,13 +4,21 @@ import { Map, Compass } from "lucide-react";
 import VibeInputBar, { type PersonaId } from "@/components/VibeInputBar";
 import ConceptMap from "@/components/ConceptMap";
 
+const sparkles = Array.from({ length: 40 }, (_, i) => ({
+  id: i,
+  top: `${Math.random() * 100}%`,
+  left: `${Math.random() * 100}%`,
+  delay: `${Math.random() * 4}s`,
+  duration: `${2 + Math.random() * 3}s`,
+  size: `${2 + Math.random() * 3}px`,
+}));
+
 const Index = () => {
   const [showMap, setShowMap] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   const handleGenerate = (_input: string, _persona: PersonaId) => {
     setIsLoading(true);
-    // Simulate AI processing
     setTimeout(() => {
       setIsLoading(false);
       setShowMap(true);
@@ -18,7 +26,24 @@ const Index = () => {
   };
 
   return (
-    <div className="flex flex-col h-screen bg-background overflow-hidden">
+    <div className="flex flex-col h-screen bg-background overflow-hidden relative">
+      {/* Sparkles */}
+      <div className="sparkle-container">
+        {sparkles.map((s) => (
+          <div
+            key={s.id}
+            className="sparkle"
+            style={{
+              top: s.top,
+              left: s.left,
+              animationDelay: s.delay,
+              animationDuration: s.duration,
+              width: s.size,
+              height: s.size,
+            }}
+          />
+        ))}
+      </div>
       {/* Header */}
       <header className="border-b border-border bg-card/80 backdrop-blur-sm">
         <div className="flex items-center justify-between px-6 py-3">
